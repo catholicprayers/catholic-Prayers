@@ -1,109 +1,242 @@
-/* style.css */
+/* Root Variables for Theme Colors */
+:root {
+  --primary-color: #6b705c; /* Soft green tone */
+  --secondary-color: #ffe8d6; /* Beige */
+  --accent-color: #ddbea9; /* Warm peach */
+  --text-color: #333333; /* Dark grey */
+  --background-color: #f4f1de; /* Light cream */
+}
 
-/* General Reset */
+/* General Body Styling */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Horizontal Navigation Bar */
-.horizontal-navbar {
-  width: 100%; /* Full width */
-  background-color: #333; /* Dark background color */
-  padding: 10px 0; /* Padding for better spacing */
-  position: fixed; /* Sticks the bar at the top of the page */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Keeps it on top of other content */
-}
-
-.navbar {
-  list-style: none; /* Remove bullets */
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
-  display: flex; /* Align items horizontally */
-  justify-content: flex-start; /* Align items to the left */
 }
 
-.navbar li {
-  margin: 0; /* No extra space around items */
-  padding: 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white; /* Text color */
-  padding: 5px 10px; /* Spacing around each link */
-  font-weight: bold;
-}
-
-.navbar a:hover {
-  background-color: #575757; /* Highlight background on hover */
-  color: white; /* Keep text color white */
-}
-
-
-/* Main Heading */
+/* Header Section */
 header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px;
   text-align: center;
-  padding: 20px 0;
-  background-color: #f4f4f4;
-  margin-top: 50px; /* Adjust this value to the height of your navbar */
 }
 
-header h1 {
+header .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+/* Navigation Bar */
+#nav {
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#nav ul.links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
   margin: 0;
-  font-size: 2.5rem;
 }
 
-/* Portrait Image */
-.portrait-image {
-  display: block;
-  margin: 20px auto;
-  width: 300px; /* Adjust the size as needed */
+#nav ul.links li {
+  margin: 0 15px;
+}
+
+#nav ul.links li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+#nav ul.links li a:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* Intro Section */
+#intro {
+  background: var(--secondary-color);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#intro h1 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  font-size: 3rem;
+}
+
+#intro p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin: 20px 0;
+}
+
+#intro .button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#intro .button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Main Section */
+#main {
+  padding: 50px 20px;
+}
+
+.post.featured {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.post.featured .major h2 a {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.post.featured .major h2 a:hover {
+  color: var(--accent-color);
+}
+
+.posts article {
+  border: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.posts article:hover {
+  transform: translateY(-5px);
+}
+
+.posts article h2 a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.posts article h2 a:hover {
+  color: var(--accent-color);
+}
+
+.posts article .image.fit img {
+  width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-/* Grid of Images */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-.grid-item {
+/* Buttons */
+.button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
   text-align: center;
 }
 
-.grid-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.grid-item a {
-  display: block;
-  margin-top: 5px;
-  text-decoration: none;
-  color: #007BFF;
-  font-weight: bold;
-}
-
-.grid-item a:hover {
-  text-decoration: underline;
+.button:hover {
+  background-color: var(--accent-color);
 }
 
 /* Footer */
-footer {
-  background-color: #333;
-  color: white;
+#footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 20px;
   text-align: center;
-  padding: 10px 0;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+}
+
+#footer h3 {
+  color: var(--secondary-color);
+}
+
+#footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+#footer .split.contact .icons.alt li {
+  margin: 0 10px;
+}
+
+#footer .icons.alt li a {
+  color: var(--secondary-color);
+}
+
+#footer .icons.alt li a:hover {
+  color: var(--accent-color);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.pagination a:hover {
+  color: var(--accent-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #intro h1 {
+    font-size: 2rem;
+  }
+
+  .post.featured .major h2 a {
+    font-size: 1.8rem;
+  }
+
+  #nav ul.links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #nav ul.links li {
+    margin: 5px 0;
+  }
+
+  .posts article {
+    padding: 15px;
+  }
 }
