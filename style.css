@@ -6,29 +6,41 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Navigation Bar */
+/* Horizontal Navigation Bar */
+.horizontal-navbar {
+  width: 100%; /* Full width */
+  background-color: #333; /* Dark background color */
+  padding: 10px 0; /* Padding for better spacing */
+  position: fixed; /* Sticks the bar at the top of the page */
+  top: 0;
+  left: 0;
+}
+
 .navbar {
-  list-style: none;
-  background-color: #333;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
+  list-style: none; /* Remove bullets */
   margin: 0;
+  padding: 0;
+  display: flex; /* Align items horizontally */
+  justify-content: flex-start; /* Align items to the left */
 }
 
 .navbar li {
-  margin: 0 15px;
+  margin: 0; /* No extra space around items */
+  padding: 0;
 }
 
 .navbar a {
   text-decoration: none;
-  color: white;
+  color: white; /* Text color */
+  padding: 10px 20px; /* Spacing around each link */
   font-weight: bold;
 }
 
 .navbar a:hover {
-  text-decoration: underline;
+  background-color: #575757; /* Highlight background on hover */
+  color: white; /* Keep text color white */
 }
+
 
 /* Main Heading */
 header {
