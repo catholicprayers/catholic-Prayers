@@ -10,10 +10,11 @@ body {
 .horizontal-navbar {
   width: 100%; /* Full width */
   background-color: #333; /* Dark background color */
-  padding: 10px 0; /* Padding for better spacing */
+  padding: 5px 0; /* Padding for better spacing */
   position: fixed; /* Sticks the bar at the top of the page */
   top: 0;
   left: 0;
+  z-index: 1000; /* Keeps it on top of other content */
 }
 
 .navbar {
@@ -32,7 +33,7 @@ body {
 .navbar a {
   text-decoration: none;
   color: white; /* Text color */
-  padding: 10px 20px; /* Spacing around each link */
+  padding: 5px 10px; /* Spacing around each link */
   font-weight: bold;
 }
 
