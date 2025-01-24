@@ -4,53 +4,40 @@ html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    flex-direction: column; /* Flexbox layout for sticky footer */
 }
 
 /* Content Wrapper */
 .content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+    flex: 1; /* Allows the content to grow and push the footer down */
 }
 
 /* Navigation Bar */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between links and search bar */
     align-items: center;
     background-color: #930064;
     padding: 7px 20px;
-    flex-wrap: wrap; /* Allow items to wrap if needed */
-    width: 100%;
 }
 
-.nav-links {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
+/* Navigation Links */
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
+    margin: 0 15px;
     font-size: 1.2em;
-    margin: 0 10px;
-    white-space: nowrap;
 }
 
 .nav-links a:hover {
     background-color: #5e3a08;
 }
 
+/* Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
-    margin-left: 10px;
-    flex-shrink: 0;
 }
 
 .search-bar input {
@@ -78,8 +65,8 @@ nav {
 /* Header Section */
 header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
     padding: 20px;
     background-color: #008080;
 }
@@ -87,8 +74,8 @@ header {
 header .image {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
+    border-radius: 50%; /* Make the image circular */
+    overflow: hidden; /* Ensure content inside the circle stays within bounds */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,12 +84,12 @@ header .image {
 header .image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensure the image fills the circle */
 }
 
 header .title {
-    margin-top: 15px;
-    text-align: center;
+    margin-top: 15px; /* Add spacing between the image and title */
+    text-align: center; /* Center-align the text */
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
@@ -114,7 +101,7 @@ header .subtitle {
     font-weight: bold;
     color: #ffffff;
     margin-top: 5px;
-    text-align: center;
+    text-align: center; /* Center-align subtitle */
     font-family: 'Bodoni MT Black', serif;
 }
 
@@ -123,15 +110,15 @@ header .subtitle {
     padding: 20px;
     background-color: #f4f4f4;
     margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Optional: Rounded corners for the content section */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for content section */
 }
 
 .main-content h2 {
     font-size: 1.8em;
     color: #333333;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: left; /* Center-align the heading */
 }
 
 .main-content p {
@@ -139,54 +126,55 @@ header .subtitle {
     line-height: 1.6;
     color: #555555;
     margin-bottom: 10px;
-    text-align: justify;
+    text-align: justify; /* Align text to both sides */
 }
 
 .main-content p.right-align {
-    text-align: right;
+    text-align: right; /* Align the paragraph to the right */
 }
+
 
 /* Image Grid */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns in the grid */
+    grid-gap: 20px; /* Space between images */
+    justify-items: center; /* Center images horizontally */
     padding: 20px;
     margin-top: 40px;
 }
 
 .image-item {
-    position: relative;
+    position: relative; /* Allow absolute positioning of the link */
     width: 250px;
     height: 250px;
 }
 
 .image-item a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: relative;
+    display: block; /* Make the link take up the whole area */
+    height: 100%; /* Make the anchor tag fill the entire container */
+    width: 100%; /* Make the anchor tag fill the entire container */
+    position: relative; /* Needed for absolute positioning of the text */
 }
 
 .image-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 100%; /* Ensure image takes full width */
+    height: 100%; /* Ensure image takes full height */
+    object-fit: cover; /* Ensures image fills the container proportionally */
+    border-radius: 10px; /* Optional: Rounded corners */
 }
 
 .image-item a span {
-    position: absolute;
-    bottom: 10px;
+    position: absolute; /* Position the text inside the image */
+    bottom: 10px; /* Distance from the bottom of the image */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center the text horizontally */
     font-size: 1.2em;
-    color: #ffffff;
+    color: #ffffff; /* Text color */
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Background for readability */
+    padding: 5px 10px; /* Optional: Padding around text */
+    border-radius: 5px; /* Optional: Rounded corners for the link */
 }
 
 .image-item a:hover {
@@ -195,8 +183,9 @@ header .subtitle {
 
 .image-item a span:hover {
     text-decoration: underline;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
 }
+
 
 /* Footer */
 footer {
@@ -204,133 +193,4 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-}
-
-/* Responsive Design for Navigation */
-
-/* Tablet Landscape and Smaller */
-@media (max-width: 1024px) {
-    .nav-links a {
-        font-size: 1em;
-        padding: 8px 15px;
-    }
-
-    .search-bar input,
-    .search-bar button {
-        font-size: 0.9em;
-    }
-
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-    }
-}
-
-/* Tablet Portrait and Smaller */
-@media (max-width: 768px) {
-    .nav-links a {
-        font-size: 0.9em;
-        padding: 8px 12px;
-    }
-
-    .search-bar input {
-        font-size: 0.9em;
-    }
-
-    .search-bar button {
-        font-size: 0.9em;
-    }
-
-    .image-grid {
-        grid-template-columns: repeat(1, 1fr); /* 1 column for small screens */
-    }
-
-    header .title {
-        font-size: 1.8em; /* Reduce title size for smaller screens */
-    }
-
-    .main-content {
-        padding: 15px; /* Reduce content padding for mobile */
-    }
-}
-
-/* Mobile Portrait */
-@media (max-width: 480px) {
-    nav {
-        padding: 5px 10px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .nav-links a {
-        width: 100%;
-        padding: 10px 0;
-        text-align: center;
-        font-size: 1.1em;
-    }
-
-    .search-bar {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .search-bar input {
-        font-size: 1em;
-        width: 80%;
-    }
-
-    .search-bar button {
-        font-size: 1em;
-        width: 20%;
-    }
-
-    .image-grid {
-        grid-template-columns: 1fr; /* 1 column for mobile */
-    }
-
-    .main-content h2 {
-        font-size: 1.5em;
-    }
-}
-
-/* Mobile Landscape */
-@media (max-width: 767px) and (orientation: landscape) {
-    nav {
-        padding: 5px 10px;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .nav-links a {
-        font-size: 1em;
-        padding: 10px 15px;
-    }
-
-    .search-bar {
-        margin-left: 20px;
-    }
-
-    .search-bar input {
-        font-size: 1em;
-        width: 80%;
-    }
-
-    .search-bar button {
-        font-size: 1em;
-        width: 15%;
-    }
-
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for landscape */
-    }
-
-    .main-content h2 {
-        font-size: 1.8em; /* Adjust main content heading size */
-    }
 }
