@@ -93,6 +93,7 @@ header .title {
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
+    font-family: 'Lucida Fax', serif;
 }
 
 header .subtitle {
@@ -101,6 +102,7 @@ header .subtitle {
     color: #ffffff;
     margin-top: 5px;
     text-align: center; /* Center-align subtitle */
+    font-family: 'Bodoni MT Black', serif;
 }
 
 /* Main Content Section */
