@@ -4,40 +4,48 @@ html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column; /* Flexbox layout for sticky footer */
+    flex-direction: column;
 }
 
 /* Content Wrapper */
 .content {
-    flex: 1; /* Allows the content to grow and push the footer down */
+    flex: 1;
 }
 
 /* Navigation Bar */
 nav {
     display: flex;
-    justify-content: space-between; /* Space between links and search bar */
+    justify-content: space-between;
     align-items: center;
     background-color: #930064;
     padding: 7px 20px;
+    flex-wrap: wrap; /* Allow items to wrap if needed on small screens */
 }
 
-/* Navigation Links */
+.nav-links {
+    display: flex;
+    justify-content: space-between; /* Space out links */
+    flex-grow: 1; /* Allow links to take up available space */
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    margin: 0 15px;
     font-size: 1.2em;
+    margin: 0 10px;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .nav-links a:hover {
     background-color: #5e3a08;
 }
 
-/* Search Bar */
 .search-bar {
     display: flex;
     align-items: center;
+    margin-left: 10px;
+    flex-shrink: 0; /* Prevent search bar from shrinking */
 }
 
 .search-bar input {
@@ -65,8 +73,8 @@ nav {
 /* Header Section */
 header {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
     background-color: #008080;
 }
@@ -74,8 +82,8 @@ header {
 header .image {
     width: 200px;
     height: 200px;
-    border-radius: 50%; /* Make the image circular */
-    overflow: hidden; /* Ensure content inside the circle stays within bounds */
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,12 +92,12 @@ header .image {
 header .image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image fills the circle */
+    object-fit: cover;
 }
 
 header .title {
-    margin-top: 15px; /* Add spacing between the image and title */
-    text-align: center; /* Center-align the text */
+    margin-top: 15px;
+    text-align: center;
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
@@ -101,7 +109,7 @@ header .subtitle {
     font-weight: bold;
     color: #ffffff;
     margin-top: 5px;
-    text-align: center; /* Center-align subtitle */
+    text-align: center;
     font-family: 'Bodoni MT Black', serif;
 }
 
@@ -110,15 +118,15 @@ header .subtitle {
     padding: 20px;
     background-color: #f4f4f4;
     margin: 20px;
-    border-radius: 10px; /* Optional: Rounded corners for the content section */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for content section */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-content h2 {
     font-size: 1.8em;
     color: #333333;
     margin-bottom: 20px;
-    text-align: left; /* Center-align the heading */
+    text-align: left;
 }
 
 .main-content p {
@@ -126,55 +134,54 @@ header .subtitle {
     line-height: 1.6;
     color: #555555;
     margin-bottom: 10px;
-    text-align: justify; /* Align text to both sides */
+    text-align: justify;
 }
 
 .main-content p.right-align {
-    text-align: right; /* Align the paragraph to the right */
+    text-align: right;
 }
-
 
 /* Image Grid */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns in the grid */
-    grid-gap: 20px; /* Space between images */
-    justify-items: center; /* Center images horizontally */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-items: center;
     padding: 20px;
     margin-top: 40px;
 }
 
 .image-item {
-    position: relative; /* Allow absolute positioning of the link */
+    position: relative;
     width: 250px;
     height: 250px;
 }
 
 .image-item a {
-    display: block; /* Make the link take up the whole area */
-    height: 100%; /* Make the anchor tag fill the entire container */
-    width: 100%; /* Make the anchor tag fill the entire container */
-    position: relative; /* Needed for absolute positioning of the text */
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .image-item img {
-    width: 100%; /* Ensure image takes full width */
-    height: 100%; /* Ensure image takes full height */
-    object-fit: cover; /* Ensures image fills the container proportionally */
-    border-radius: 10px; /* Optional: Rounded corners */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .image-item a span {
-    position: absolute; /* Position the text inside the image */
-    bottom: 10px; /* Distance from the bottom of the image */
+    position: absolute;
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); /* Center the text horizontally */
+    transform: translateX(-50%);
     font-size: 1.2em;
-    color: #ffffff; /* Text color */
+    color: #ffffff;
     text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Background for readability */
-    padding: 5px 10px; /* Optional: Padding around text */
-    border-radius: 5px; /* Optional: Rounded corners for the link */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .image-item a:hover {
@@ -183,9 +190,8 @@ header .subtitle {
 
 .image-item a span:hover {
     text-decoration: underline;
-    background-color: rgba(0, 0, 0, 0.7); /* Darker background on hover */
+    background-color: rgba(0, 0, 0, 0.7);
 }
-
 
 /* Footer */
 footer {
@@ -193,4 +199,70 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive Design for Navigation */
+
+/* Tablet Landscape and Smaller */
+@media (max-width: 1024px) {
+    .nav-links a {
+        font-size: 1em; /* Shrink font size for tablet */
+        padding: 8px 15px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet Portrait and Smaller */
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 0.9em; /* Shrink font size for mobile */
+        padding: 8px 12px;
+    }
+
+    .search-bar input {
+        font-size: 0.9em;
+    }
+
+    .search-bar button {
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+    nav {
+        padding: 5px 10px; /* Reduce padding for mobile */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Stack links vertically */
+    }
+
+    .nav-links a {
+        width: 100%; /* Links take full width */
+        padding: 10px 0; /* Larger padding for touch devices */
+        text-align: center; /* Center-align links */
+        font-size: 1.1em;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input {
+        font-size: 1em;
+        width: 80%; /* Allow search bar to expand */
+    }
+
+    .search-bar button {
+        font-size: 1em;
+        width: 20%; /* Shrink button to fit beside the search input */
+    }
 }
